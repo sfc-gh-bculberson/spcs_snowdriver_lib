@@ -2,7 +2,7 @@
 
 # Setup
 1. In a SQL Worksheet, execute `SHOW IMAGE REPOSITORIES` and look
-   for the entry for `TUTORIAL_DB.DATA_SCHEMA.TUTORIAL_REPOSITORY`.
+   for the entry for your image repository.
    Note the value for `repository_url`.
 2. In the main directory of this repo, execute 
    `bash ./configure.sh`. Enter the URL of the repository that you
