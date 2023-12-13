@@ -12,7 +12,7 @@ Build the test container with the statement below.
 
 To test your conatiner locally, update the environment file [env.list](./env.list) with your connection credentials and run the docker command below.
 ```
-   docker run -it --rm --name connection_test --env-file env.list  connection_test_go:v0.1 /bin/bash -c "go run ."
+   docker run -it --rm --name connection_test --env-file env.list  connection_test_go:v0.1 /bin/bash -c "./connection_test_go"
 ```
 You should see a similar output referencing your snowflake account id.
 ```
