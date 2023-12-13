@@ -15,7 +15,7 @@ spec:
     - bash
     args:
     - -c
-    - "./connection_get_go"
+    - "./connection_test_go"
 $$;
 
 SET JOB_ID = LAST_QUERY_ID();
