@@ -18,8 +18,8 @@ const (
 	EnvSnowflakeDatabase = "SNOWFLAKE_DATABASE"
 	EnvSnowflakeSchema   = "SNOWFLAKE_SCHEMA"
 	EnvWarehouse         = "WAREHOUSE"
-	EnvUser              = "USER"
-	EnvPassword          = "PASSWORD"
+	EnvUser              = "SNOWFLAKE_USER"
+	EnvPassword          = "SNOWFLAKE_PASSWORD"
 	EnvRole              = "ROLE"
 	TokenPath            = "/snowflake/session/token"
 )
@@ -33,7 +33,7 @@ func main() {
 	}
 	log.Printf("Connection succeeded!")
 
-	query := "SELECT 1"
+	query := "SELECT 'successfully connected to '||current_account();"
 	rows, _, err := runQuery(conn, query)
 	if err != nil {
 		log.Fatal(err)
