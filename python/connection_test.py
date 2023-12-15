@@ -1,3 +1,4 @@
+import logging
 import os
 import snowflake.connector
 
@@ -29,6 +30,11 @@ def connection() -> snowflake.connector.SnowflakeConnection:
     connection = snowflake.connector.connect(**creds)
     return connection
 
-with connection() as conn:
-    with conn.cursor() as cur:
-        print(cur.execute("SELECT 'successfully connected to '||current_account();").fetchall())
+def main():
+    logging.basicConfig(level=logging.WARNING)
+    with connection() as conn:
+        with conn.cursor() as cur:
+            print(cur.execute("SELECT 'successfully connected to '||current_account();").fetchall())
+
+if __name__ == '__main__':
+    main()
